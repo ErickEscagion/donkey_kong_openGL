@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using Screen = Project.Navigation.Scripts.Screen;
 
 namespace Project.Game.Scripts
 {
-    public class GameController : MonoBehaviour
+    public class GameController : Screen
     {
-        
+        public const string sceneName = "game";
     }
 }
