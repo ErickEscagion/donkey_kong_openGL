@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Project.Core.Scripts
 {
+    [ExecuteAlways]
     internal class GLDebug : MonoBehaviour
     {
         #region Lifecycle

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Project.Horse.Scripts
 {
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class HorseRenderer : MonoBehaviour
     {
         #region Lifecycle
@@ -17,6 +17,7 @@ namespace Project.Horse.Scripts
 
             var origin = _transform.position;
 
+            DrawHorsehair(origin);
             DrawFrontRightPaw(origin);
             DrawBackRightPaw(origin);
             DrawBody(origin);
@@ -224,6 +225,36 @@ namespace Project.Horse.Scripts
             GL.Vertex(origin + new Vector2(-2.5f, 0.6f));
             GL.Vertex(origin + new Vector2(-2.3f, 0.6f));
             GL.Vertex(origin + new Vector2(-2.3f, 0.4f));
+        }
+
+        private void DrawHorsehair(Vector2 origin)
+        {
+            GL.Color(horsehairColor);
+
+            GL.Vertex(origin + new Vector2(0.6f, 1.8f));
+            GL.Vertex(origin + new Vector2(0.6f, 1.95f));
+            GL.Vertex(origin + new Vector2(0.85f, 1.95f));
+            GL.Vertex(origin + new Vector2(0.85f, 1.8f));
+
+            GL.Vertex(origin + new Vector2(0, 1.65f));
+            GL.Vertex(origin + new Vector2(0, 1.8f));
+            GL.Vertex(origin + new Vector2(0.4f, 1.8f));
+            GL.Vertex(origin + new Vector2(0.4f, 1.65f));
+
+            GL.Vertex(origin + new Vector2(0.26f, 0.5f));
+            GL.Vertex(origin + new Vector2(0.26f, 1.65f));
+            GL.Vertex(origin + new Vector2(0.4f, 1.65f));
+            GL.Vertex(origin + new Vector2(0.4f, 0.5f));
+
+            GL.Vertex(origin + new Vector2(0, 0.5f));
+            GL.Vertex(origin + new Vector2(0, 1.5f));
+            GL.Vertex(origin + new Vector2(0.26f, 1.5f));
+            GL.Vertex(origin + new Vector2(0.26f, 0.5f));
+
+            GL.Vertex(origin + new Vector2(-0.26f, 0.5f));
+            GL.Vertex(origin + new Vector2(-0.26f, 0.62f));
+            GL.Vertex(origin + new Vector2(0, 0.62f));
+            GL.Vertex(origin + new Vector2(0, 0.5f));
         }
 
         private Transform _transform;
