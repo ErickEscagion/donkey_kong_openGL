@@ -1,7 +1,9 @@
 {
   "name": "Horse",
   "rootNamespace": "",
-  "references": [],
+  "references": [
+    "Extensions"
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
