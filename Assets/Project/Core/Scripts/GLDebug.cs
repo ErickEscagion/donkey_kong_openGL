@@ -13,7 +13,7 @@ namespace Project.Core.Scripts
         {
             GL.PushMatrix();
             material.SetPass(0);
-            GL.Begin(GL.QUADS);
+            GL.Begin(GL.LINES);
             GL.Color(debugColor);
 
             foreach (var point in points)
