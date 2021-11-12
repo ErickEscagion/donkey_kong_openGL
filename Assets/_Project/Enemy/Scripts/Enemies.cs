@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace _Project.Enemy.Scripts
 {
-    [ExecuteAlways]
     public class Enemies : MonoBehaviour
     {
         #region Properties
