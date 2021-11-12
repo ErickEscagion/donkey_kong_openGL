@@ -5,8 +5,8 @@ namespace _Project.Data.Scripts
     public static class DataEvent<T>
         where T : struct
     {
-        public static event UnityAction<T> on;
+        public static event UnityAction<T> call;
 
-        public static void Send(T value) => on?.Invoke(value);
+        public static void Send(T value) => call?.Invoke(value);
     }
 }
