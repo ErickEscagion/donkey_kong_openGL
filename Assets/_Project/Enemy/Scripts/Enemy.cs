@@ -6,7 +6,6 @@ namespace _Project.Enemy.Scripts
     [Serializable]
     public class Enemy
     {
-        public string name;
         public int lastPointIndex;
         public float animationTime ;
         public float size;

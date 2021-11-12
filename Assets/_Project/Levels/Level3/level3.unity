@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 802210237}
   - component: {fileID: 802210236}
   - component: {fileID: 802210235}
+  - component: {fileID: 802210239}
   - component: {fileID: 802210238}
   m_Layer: 0
   m_Name: mainCamera
@@ -221,13 +222,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}
   enemies:
-  - name: Inimigo 01
-    lastPointIndex: 0
+  - lastPointIndex: 1
     animationTime: 0.5
     size: 0.5
     color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
-    origin: {x: 0, y: 0}
+    origin: {x: -0.2385056, y: 4.7614946}
     points:
     - {x: 5, y: 0}
     - {x: -5, y: 0}
     - {x: 0, y: 5}
+--- !u!114 &802210239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c39bdc93ea4a24dbcf6ad8e28f42e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: 6
+  columns: 12
+  p1: 0
+  p2: 0
+  pass: 4
+  material: {fileID: 2100000, guid: 23b28526cf2a51b4ba45697ff80b9d9c, type: 2}
