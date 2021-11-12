@@ -6,5 +6,7 @@ namespace _Project.Data.Scripts
         where T : struct
     {
         public static event UnityAction<T> on;
+
+        public static void Send(T value) => on?.Invoke(value);
     }
 }
