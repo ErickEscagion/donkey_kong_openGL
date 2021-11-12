@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 802210236}
   - component: {fileID: 802210235}
   - component: {fileID: 802210239}
+  - component: {fileID: 802210240}
   - component: {fileID: 802210238}
   m_Layer: 0
   m_Name: mainCamera
@@ -178,7 +179,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -220,13 +221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d4ba8f8cf347e1aa9e41d625e4ba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}
   enemies:
-  - lastPointIndex: 1
+  - lastPointIndex: 2
     animationTime: 0.5
-    size: 0.5
+    size: 0.75
     color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
-    origin: {x: -1.6666665, y: 3.3333335}
+    origin: {x: -11.87, y: 2.37}
     points:
     - {x: 5, y: 0}
     - {x: -5, y: 0}
@@ -245,7 +245,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines: 4
   columns: 11
-  p1: 19
-  p2: 33.5
-  pass: 4
+  thick: 0.2
+  pass: 1.5
+  origin: {x: -8, y: -3}
   material: {fileID: 2100000, guid: ec7a8686f94045341910475ef6ecadde, type: 2}
+--- !u!114 &802210240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f4f3ef9b9e12248af3ae0f8484b089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}

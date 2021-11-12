@@ -9,7 +9,7 @@ namespace _Project.Enemy.Scripts
     {
         #region Properties
 
-        public IEnumerable<Enemy> Data => enemies;
+        public IEnumerable<Enemy> All => enemies;
 
         #endregion
 
@@ -23,33 +23,9 @@ namespace _Project.Enemy.Scripts
             }
         }
 
-        private void OnPostRender()
-        {
-            GL.PushMatrix();
-            material.SetPass(0);
-
-            GL.Begin(GL.QUADS);
-
-            foreach (var enemy in enemies)
-            {
-                Draw(enemy);
-            }
-
-            GL.End();
-            GL.PopMatrix();
-        }
-
         #endregion
 
-        private static void Draw(Enemy enemy)
-        {
-            GL.Color(enemy.color);
-
-            GL.Vertex3(enemy.origin.x - enemy.size, enemy.origin.y - enemy.size, 0);
-            GL.Vertex3(enemy.origin.x - enemy.size, enemy.origin.y + enemy.size, 0);
-            GL.Vertex3(enemy.origin.x + enemy.size, enemy.origin.y + enemy.size, 0);
-            GL.Vertex3(enemy.origin.x + enemy.size, enemy.origin.y - enemy.size, 0);
-        }
+        #region Coroutines
 
         private IEnumerator MoveCoroutine(Enemy enemy)
         {
@@ -71,8 +47,9 @@ namespace _Project.Enemy.Scripts
             StartCoroutine(MoveCoroutine(enemy));
         }
 
+        #endregion
+
 #pragma warning disable 649
-        [SerializeField] private Material material;
         [SerializeField] private Enemy[] enemies;
 #pragma warning restore 649
     }
