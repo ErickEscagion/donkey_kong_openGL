@@ -28,8 +28,15 @@ namespace _Project.Enemy.Scripts
 
         #endregion
 
-        private static void Draw(Enemy enemy)
+        private void Draw(Enemy enemy)
         {
+            GL.Color(Color.black);
+
+            GL.Vertex3(enemy.origin.x - enemy.size - size, enemy.origin.y - enemy.size - size, 0);
+            GL.Vertex3(enemy.origin.x - enemy.size - size, enemy.origin.y + enemy.size + size, 0);
+            GL.Vertex3(enemy.origin.x + enemy.size + size, enemy.origin.y + enemy.size + size, 0);
+            GL.Vertex3(enemy.origin.x + enemy.size + size, enemy.origin.y - enemy.size - size, 0);
+
             GL.Color(enemy.color);
 
             GL.Vertex3(enemy.origin.x - enemy.size, enemy.origin.y - enemy.size, 0);
@@ -42,6 +49,7 @@ namespace _Project.Enemy.Scripts
 
 #pragma warning disable 649
         [SerializeField] private Material material;
+        [SerializeField] private float size = 0.1f;
 #pragma warning restore 649
     }
 }

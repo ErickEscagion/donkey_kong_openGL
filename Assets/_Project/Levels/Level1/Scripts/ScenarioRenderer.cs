@@ -27,24 +27,24 @@ namespace _Project.Levels.Level1.Scripts
             GL.Begin(GL.QUADS);
 
             //start
-            GL.Color(Color.red);
+            GL.Color(Color.white);
             GL.Vertex3((origin.x - pass), (origin.y - pass), 0);
             GL.Vertex3(origin.x, (origin.y - pass), 0);
             GL.Vertex3(origin.x, origin.y, 0);
             GL.Vertex3((origin.x - pass), origin.y, 0);
-            GL.Color(Color.blue);
+            GL.Color(Color.gray);
             GL.Vertex3(origin.x, (origin.y - pass), 0);
             GL.Vertex3((origin.x + pass), (origin.y - pass), 0);
             GL.Vertex3((origin.x + pass), origin.y, 0);
             GL.Vertex3(origin.x, origin.y, 0);
 
             //end
-            GL.Color(Color.blue);
+            GL.Color(Color.gray);
             GL.Vertex3(origin.x + pass * columns + pass, origin.y + pass * lines, 0);
             GL.Vertex3(origin.x + pass * columns, origin.y + pass * lines, 0);
             GL.Vertex3(origin.x + pass * columns, origin.y + pass * lines + pass, 0);
             GL.Vertex3(origin.x + pass * columns + pass, origin.y + pass * lines + pass, 0);
-            GL.Color(Color.red);
+            GL.Color(Color.white);
             GL.Vertex3(origin.x + (pass * columns), origin.y + (pass * lines), 0);
             GL.Vertex3(origin.x + (pass * columns) - pass, origin.y + (pass * lines), 0);
             GL.Vertex3(origin.x + (pass * columns) - pass, origin.y + (pass * lines) + pass, 0);
@@ -56,11 +56,11 @@ namespace _Project.Levels.Level1.Scripts
                 {
                     if (i % 2 == 0)
                     {
-                        GL.Color(j % 2 == 0 ? Color.red : Color.blue);
+                        GL.Color(j % 2 == 0 ? Color.white : Color.gray);
                     }
                     else
                     {
-                        GL.Color(j % 2 == 0 ? Color.blue : Color.red);
+                        GL.Color(j % 2 == 0 ? Color.gray : Color.white);
                     }
 
                     GL.Vertex3(origin.x + pass + j * pass, origin.y + i * pass, 0);

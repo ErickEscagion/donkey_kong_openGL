@@ -11,6 +11,7 @@ namespace _Project.Levels.Level3.Scripts
         [SerializeField] private float p1 = 19.0f;
         [SerializeField] private float p2 = 33.5f;
         [SerializeField] private float pass = 4f;
+        [SerializeField] private float size = 0.2f;
 
         [Space, SerializeField] private Material material;
 #pragma warning restore 649
@@ -43,11 +44,11 @@ namespace _Project.Levels.Level3.Scripts
                 {
                     if (i % 2 == 0)
                     {
-                        GL.Color(j % 2 == 0 ? Color.red : Color.blue);
+                        GL.Color(j % 2 == 0 ? Color.white : Color.gray);
                     }
                     else
                     {
-                        GL.Color(j % 2 == 0 ? Color.blue : Color.red);
+                        GL.Color(j % 2 == 0 ? Color.gray : Color.white);
                     }
 
                     GL.Vertex3(p2 + pass + j * pass, p1 + i * pass, 0);
@@ -79,8 +80,6 @@ namespace _Project.Levels.Level3.Scripts
         {
             GL.Begin(GL.QUADS);
             GL.Color(Color.black);
-
-            const float size = 0.7f;
 
             //1 - Esqueda
             GL.Vertex3(p2 - 3 * pass, p1 + pass * lines / 2 - pass - pass / 2, 0);
