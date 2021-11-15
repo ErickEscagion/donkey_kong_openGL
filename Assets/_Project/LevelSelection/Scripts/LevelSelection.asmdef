@@ -1,10 +1,8 @@
 {
-    "name": "Menu",
+    "name": "LevelSelection",
     "rootNamespace": "",
     "references": [
-        "Navigation",
-        "LevelSelection",
-        "Level1"
+        "Navigation"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

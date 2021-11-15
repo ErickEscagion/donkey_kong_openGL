@@ -1,7 +1,9 @@
 {
     "name": "Level1",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "Navigation"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
