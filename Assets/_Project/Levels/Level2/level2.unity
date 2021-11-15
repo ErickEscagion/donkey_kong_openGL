@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 802210235}
   - component: {fileID: 802210239}
   - component: {fileID: 802210238}
+  - component: {fileID: 802210240}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -222,14 +223,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - lastPointIndex: 1
-    animationTime: 0.5
-    size: 0.5
+    animationTime: 1
+    size: 0.4
     color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
-    origin: {x: -0.012998581, y: 4.9870014}
+    origin: {x: -7.35, y: 3.15}
     points:
-    - {x: 5, y: 0}
-    - {x: -5, y: 0}
-    - {x: 0, y: 5}
+    - {x: -7.35, y: 3.15}
+    - {x: -7.35, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: -4.75, y: 3.15}
+    points:
+    - {x: -4.75, y: 3.15}
+    - {x: -4.75, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: -2.15, y: 3.15}
+    points:
+    - {x: -2.15, y: 3.15}
+    - {x: -2.15, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 0.45, y: 3.15}
+    points:
+    - {x: 0.45, y: 3.15}
+    - {x: 0.45, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 3.05, y: 3.15}
+    points:
+    - {x: 3.05, y: 3.15}
+    - {x: 3.05, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 5.65, y: 3.15}
+    points:
+    - {x: 5.65, y: 3.15}
+    - {x: 5.65, y: -3.35}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 6.95, y: -3.35}
+    points:
+    - {x: 6.95, y: -3.35}
+    - {x: 6.95, y: 3.15}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 4.35, y: -3.35}
+    points:
+    - {x: 4.35, y: -3.35}
+    - {x: 4.35, y: 3.15}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: 1.75, y: -3.35}
+    points:
+    - {x: 1.75, y: -3.35}
+    - {x: 1.75, y: 3.15}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: -0.85, y: -3.35}
+    points:
+    - {x: -0.85, y: -3.35}
+    - {x: -0.85, y: 3.15}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: -3.45, y: -3.35}
+    points:
+    - {x: -3.45, y: -3.35}
+    - {x: -3.45, y: 3.15}
+  - lastPointIndex: 1
+    animationTime: 1
+    size: 0.4
+    color: {r: 0.21681558, g: 0.2028302, b: 1, a: 1}
+    origin: {x: -6.05, y: -3.35}
+    points:
+    - {x: -6.05, y: -3.35}
+    - {x: -6.05, y: 3.15}
 --- !u!114 &802210239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,3 +337,17 @@ MonoBehaviour:
   pass: 1.3
   trick: 0.2
   material: {fileID: 2100000, guid: 63e279f8a987cdf45916abe367818ce3, type: 2}
+--- !u!114 &802210240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f4f3ef9b9e12248af3ae0f8484b089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}
+  size: 0.1
