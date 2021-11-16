@@ -2,6 +2,7 @@
     "name": "Menu",
     "rootNamespace": "",
     "references": [
+        "Core",
         "Navigation",
         "LevelSelection",
         "Level1"
