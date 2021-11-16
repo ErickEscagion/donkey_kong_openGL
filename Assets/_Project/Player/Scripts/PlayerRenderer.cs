@@ -23,9 +23,16 @@ namespace _Project.Player.Scripts
 
         private static void Draw(PlayerData player)
         {
+            float sizeBorder = 0.15f;
             GL.Begin(GL.QUADS);
-            GL.Color(player.color);
 
+            GL.Color(Color.black);
+            GL.Vertex3(player.origin.x - player.size - sizeBorder, player.origin.y - player.size - sizeBorder, 0);
+            GL.Vertex3(player.origin.x - player.size - sizeBorder, player.origin.y + player.size + sizeBorder, 0);
+            GL.Vertex3(player.origin.x + player.size + sizeBorder, player.origin.y + player.size + sizeBorder, 0);
+            GL.Vertex3(player.origin.x + player.size + sizeBorder, player.origin.y - player.size - sizeBorder, 0);
+
+            GL.Color(player.color);
             GL.Vertex3(player.origin.x - player.size, player.origin.y - player.size, 0);
             GL.Vertex3(player.origin.x - player.size, player.origin.y + player.size, 0);
             GL.Vertex3(player.origin.x + player.size, player.origin.y + player.size, 0);
