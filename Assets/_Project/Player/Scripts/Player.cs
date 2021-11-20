@@ -1,5 +1,6 @@
 using System.Linq;
 using _Project._Core.Scripts;
+using _Project.Collider.Scripts;
 using _Project.Data.Scripts;
 using _Project.Enemy.Scripts;
 using _Project.Input.Scripts;
@@ -13,7 +14,7 @@ namespace _Project.Player.Scripts
 
         private Vector2 Direction
         {
-            get => _directions;
+            get => _direction;
             set
             {
                 if (!_allowedDirections[0]) // top
@@ -28,7 +29,7 @@ namespace _Project.Player.Scripts
                 if (!_allowedDirections[3]) // left
                     value.x = value.x < 0 ? 0 : value.x;
 
-                _directions = value;
+                _direction = value;
             }
         }
 
@@ -38,7 +39,11 @@ namespace _Project.Player.Scripts
 
         #region Lifecyle
 
-        private void Awake() => _enemies = GetComponent<Enemies>();
+        private void Awake()
+        {
+            _enemies = GetComponent<Enemies>();
+            _colliders = GetComponent<RectCollider2s>();
+        }
 
         private void OnEnable() => DataEvent<InputData>.call += OnInput;
 
@@ -57,7 +62,18 @@ namespace _Project.Player.Scripts
                 }
             }
 
-            player.origin += Direction * speed * Time.deltaTime;
+            var futurePosition = player.origin + Direction * speed * Time.deltaTime;
+
+            if (_colliders.Data.Any(collider =>
+                futurePosition.x + player.size > collider.origin.x - collider.width / 2 &&
+                futurePosition.x - player.size < collider.origin.x + collider.width / 2 &&
+                futurePosition.y + player.size > collider.origin.y - collider.height / 2 &&
+                futurePosition.y - player.size < collider.origin.y + collider.height / 2))
+            {
+                return;
+            }
+
+            player.origin = futurePosition;
         }
 
         #endregion
@@ -70,9 +86,10 @@ namespace _Project.Player.Scripts
 
         private void OnInput(InputData data) => Direction = data.Get<Vector2>();
 
-        private Vector2 _directions;
+        private Vector2 _direction;
 
         private Enemies _enemies;
+        private RectCollider2s _colliders;
         private readonly bool[] _allowedDirections = Enumerable.Repeat(true, 4).ToArray();
 
 #pragma warning disable 649

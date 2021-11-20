@@ -2,10 +2,11 @@
   "name": "Player",
   "rootNamespace": "",
   "references": [
+    "Core",
     "Input",
     "Data",
     "Enemy",
-    "Core"
+    "Collider"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
