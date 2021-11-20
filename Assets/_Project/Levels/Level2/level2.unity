@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 802210240}
   - component: {fileID: 802210242}
   - component: {fileID: 802210241}
+  - component: {fileID: 802210244}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -385,6 +386,67 @@ MonoBehaviour:
     size: 0.4
     color: {r: 1, g: 0, b: 0, a: 1}
     origin: {x: -10, y: 0}
+--- !u!114 &802210244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8b111716d668743becf5f7c4953f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+  - height: 3.22
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -12.43, y: -0.06}
+  - height: 3.22
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: 12.1, y: -0.06}
+  - height: 1
+    width: 16.09
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -0.15, y: 4.39}
+  - height: 1
+    width: 16.09
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -0.15, y: -4.57}
+  - height: 1
+    width: 4.59
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: 9.94, y: -1.94}
+  - height: 1
+    width: 4.59
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: 9.94, y: 1.74}
+  - height: 1
+    width: 4.59
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -10.36, y: 1.74}
+  - height: 1
+    width: 4.59
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -10.36, y: -1.94}
+  - height: 3.36
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -8.6, y: -3.37}
+  - height: 3.36
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: 8.19, y: -3.37}
+  - height: 3.36
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: 8.19, y: 3.27}
+  - height: 3.36
+    width: 1
+    color: {r: 0.10411245, g: 0.6037736, b: 0, a: 1}
+    origin: {x: -8.64, y: 3.27}
 --- !u!1 &1052643295
 GameObject:
   m_ObjectHideFlags: 0
