@@ -2,7 +2,9 @@
     "name": "Level1",
     "rootNamespace": "",
     "references": [
-        "Navigation"
+        "Navigation",
+        "Core",
+        "Data"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

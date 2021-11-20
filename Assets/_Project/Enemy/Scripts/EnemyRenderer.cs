@@ -17,7 +17,7 @@ namespace _Project.Enemy.Scripts
 
             GL.Begin(GL.QUADS);
 
-            foreach (var enemy in _enemies.All)
+            foreach (var enemy in _enemies.Data)
             {
                 Draw(enemy);
             }
@@ -32,10 +32,10 @@ namespace _Project.Enemy.Scripts
         {
             GL.Color(Color.black);
 
-            GL.Vertex3(enemy.origin.x - enemy.size - size, enemy.origin.y - enemy.size - size, 0);
-            GL.Vertex3(enemy.origin.x - enemy.size - size, enemy.origin.y + enemy.size + size, 0);
-            GL.Vertex3(enemy.origin.x + enemy.size + size, enemy.origin.y + enemy.size + size, 0);
-            GL.Vertex3(enemy.origin.x + enemy.size + size, enemy.origin.y - enemy.size - size, 0);
+            GL.Vertex3(enemy.origin.x - enemy.size - borderWidth, enemy.origin.y - enemy.size - borderWidth, 0);
+            GL.Vertex3(enemy.origin.x - enemy.size - borderWidth, enemy.origin.y + enemy.size + borderWidth, 0);
+            GL.Vertex3(enemy.origin.x + enemy.size + borderWidth, enemy.origin.y + enemy.size + borderWidth, 0);
+            GL.Vertex3(enemy.origin.x + enemy.size + borderWidth, enemy.origin.y - enemy.size - borderWidth, 0);
 
             GL.Color(enemy.color);
 
@@ -48,8 +48,9 @@ namespace _Project.Enemy.Scripts
         private Enemies _enemies;
 
 #pragma warning disable 649
-        [SerializeField] private Material material;
-        [SerializeField] private float size = 0.1f;
+        [SerializeField] private float borderWidth = .1f;
+
+        [Space, SerializeField] private Material material;
 #pragma warning restore 649
     }
 }

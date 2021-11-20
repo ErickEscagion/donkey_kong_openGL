@@ -2,13 +2,12 @@ using System;
 using _Project._Core.Scripts;
 using _Project.Data.Scripts;
 using _Project.Navigation.Scripts;
-using Screen = _Project.Navigation.Scripts.Screen;
 
-namespace _Project.Levels.Level1.Scripts
+namespace _Project.Levels.Level2.Scripts
 {
-    public class Level1Controller : Screen
+    public class Level2Controller : Screen
     {
-        public const string sceneName = "level1";
+        public const string sceneName = "level2";
 
         #region Lifecycle
 

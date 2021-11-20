@@ -1,4 +1,8 @@
+using System.Linq;
+using _Project._Core.Scripts;
+using _Project.Collider.Scripts;
 using _Project.Data.Scripts;
+using _Project.Enemy.Scripts;
 using _Project.Input.Scripts;
 using UnityEngine;
 
@@ -8,23 +12,85 @@ namespace _Project.Player.Scripts
     {
         #region Properties
 
+        private Vector2 Direction
+        {
+            get => _direction;
+            set
+            {
+                if (!_allowedDirections[0]) // top
+                    value.y = value.y > 0 ? 0 : value.y;
+
+                if (!_allowedDirections[1]) // right
+                    value.x = value.x > 0 ? 0 : value.x;
+
+                if (!_allowedDirections[3]) // bottom
+                    value.y = value.y < 0 ? 0 : value.y;
+
+                if (!_allowedDirections[3]) // left
+                    value.x = value.x < 0 ? 0 : value.x;
+
+                _direction = value;
+            }
+        }
+
         public PlayerData Data => player;
 
         #endregion
 
         #region Lifecyle
 
+        private void Awake()
+        {
+            _enemies = GetComponent<Enemies>();
+            _colliders = GetComponent<RectCollider2s>();
+        }
+
         private void OnEnable() => DataEvent<InputData>.call += OnInput;
 
         private void OnDisable() => DataEvent<InputData>.call -= OnInput;
 
-        private void FixedUpdate() => player.origin += _direction * speed * Time.deltaTime;
+        private void FixedUpdate()
+        {
+            foreach (var enemy in _enemies.Data)
+            {
+                if (player.origin.x + player.size > enemy.origin.x - enemy.size &&
+                    player.origin.x - player.size < enemy.origin.x + enemy.size &&
+                    player.origin.y + player.size > enemy.origin.y - enemy.size &&
+                    player.origin.y - player.size < enemy.origin.y + enemy.size)
+                {
+                    Kill();
+                }
+            }
+
+            var futurePosition = player.origin + Direction * speed * Time.deltaTime;
+
+            if (_colliders.Data.Any(collider =>
+                futurePosition.x + player.size > collider.origin.x - collider.width / 2 &&
+                futurePosition.x - player.size < collider.origin.x + collider.width / 2 &&
+                futurePosition.y + player.size > collider.origin.y - collider.height / 2 &&
+                futurePosition.y - player.size < collider.origin.y + collider.height / 2))
+            {
+                return;
+            }
+
+            player.origin = futurePosition;
+        }
 
         #endregion
 
-        private void OnInput(InputData data) => _direction = data.Get<Vector2>();
+        private void Kill()
+        {
+            enabled = false;
+            DataEvent<LevelState>.Send(LevelState.Defeat);
+        }
+
+        private void OnInput(InputData data) => Direction = data.Get<Vector2>();
 
         private Vector2 _direction;
+
+        private Enemies _enemies;
+        private RectCollider2s _colliders;
+        private readonly bool[] _allowedDirections = Enumerable.Repeat(true, 4).ToArray();
 
 #pragma warning disable 649
         [SerializeField] private float speed;

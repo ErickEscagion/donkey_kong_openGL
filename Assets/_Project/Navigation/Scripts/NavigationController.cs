@@ -45,6 +45,24 @@ namespace _Project.Navigation.Scripts
             return operation;
         }
 
+        public static AsyncOperation Navigate(string sceneName)
+        {
+            var operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            Instance._scenes.Clear();
+            Instance._scenes.Push(sceneName);
+            return operation;
+        }
+
+        public static AsyncOperation Navigate<T>(string sceneName, T data)
+            where T : struct
+        {
+            var operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            DataController<T>.Add(data);
+            Instance._scenes.Clear();
+            Instance._scenes.Push(sceneName);
+            return operation;
+        }
+
         public static AsyncOperation Pop(string sceneName)
         {
             var operation = SceneManager.UnloadSceneAsync(sceneName);
