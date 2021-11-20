@@ -3,7 +3,9 @@
   "rootNamespace": "",
   "references": [
     "Input",
-    "Data"
+    "Data",
+    "Enemy",
+    "Core"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

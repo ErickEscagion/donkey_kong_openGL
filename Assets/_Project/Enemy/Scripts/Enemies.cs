@@ -8,7 +8,7 @@ namespace _Project.Enemy.Scripts
     {
         #region Properties
 
-        public IEnumerable<Enemy> All => enemies;
+        public IEnumerable<Enemy> Data => enemies;
 
         #endregion
 
@@ -28,6 +28,11 @@ namespace _Project.Enemy.Scripts
 
         private IEnumerator MoveCoroutine(Enemy enemy)
         {
+            if (enemy.points.Length == 0)
+            {
+                yield break;
+            }
+
             var time = 0f;
             var index = enemy.lastPointIndex + 1 > enemy.points.Length - 1 ? 0 : enemy.lastPointIndex + 1;
 

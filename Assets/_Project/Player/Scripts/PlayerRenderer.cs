@@ -21,16 +21,15 @@ namespace _Project.Player.Scripts
 
         #endregion
 
-        private static void Draw(PlayerData player)
+        private void Draw(PlayerData player)
         {
-            float sizeBorder = 0.15f;
             GL.Begin(GL.QUADS);
 
             GL.Color(Color.black);
-            GL.Vertex3(player.origin.x - player.size - sizeBorder, player.origin.y - player.size - sizeBorder, 0);
-            GL.Vertex3(player.origin.x - player.size - sizeBorder, player.origin.y + player.size + sizeBorder, 0);
-            GL.Vertex3(player.origin.x + player.size + sizeBorder, player.origin.y + player.size + sizeBorder, 0);
-            GL.Vertex3(player.origin.x + player.size + sizeBorder, player.origin.y - player.size - sizeBorder, 0);
+            GL.Vertex3(player.origin.x - player.size - borderWidth, player.origin.y - player.size - borderWidth, 0);
+            GL.Vertex3(player.origin.x - player.size - borderWidth, player.origin.y + player.size + borderWidth, 0);
+            GL.Vertex3(player.origin.x + player.size + borderWidth, player.origin.y + player.size + borderWidth, 0);
+            GL.Vertex3(player.origin.x + player.size + borderWidth, player.origin.y - player.size - borderWidth, 0);
 
             GL.Color(player.color);
             GL.Vertex3(player.origin.x - player.size, player.origin.y - player.size, 0);
@@ -40,7 +39,9 @@ namespace _Project.Player.Scripts
         }
 
 #pragma warning disable 649
-        [SerializeField] private Player player;
+        [SerializeField] private float borderWidth = .1f;
+
+        [Space, SerializeField] private Player player;
         [SerializeField] private Material material;
 #pragma warning restore 649
     }

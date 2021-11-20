@@ -123,6 +123,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &762375056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762375058}
+  - component: {fileID: 762375057}
+  m_Layer: 0
+  m_Name: _controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762375057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762375056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05fecccd5e948d28b57e65613a9b546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &762375058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762375056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802210234
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &802210238
 MonoBehaviour:
@@ -351,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f4f3ef9b9e12248af3ae0f8484b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderWidth: 0.1
   material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}
-  size: 0.1
 --- !u!114 &802210241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737eb610dcb8dbd43aca201b1f61ad08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderWidth: 0.1
   player: {fileID: 802210242}
   material: {fileID: 2100000, guid: 13ea6961e4a9e0b40bfe5f6e950a13d2, type: 2}
 --- !u!114 &802210242
@@ -429,5 +473,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
