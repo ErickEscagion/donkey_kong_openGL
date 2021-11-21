@@ -1,8 +1,8 @@
 {
-    "name": "LevelSelection",
+    "name": "Game",
     "rootNamespace": "",
     "references": [
-        "Navigation"
+        "Levels"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

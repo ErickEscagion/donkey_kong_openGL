@@ -63,10 +63,10 @@ namespace _Project.Navigation.Scripts
             return operation;
         }
 
-        public static AsyncOperation Pop(string sceneName)
+        public static AsyncOperation Pop()
         {
+            var sceneName = Instance._scenes.Pop();
             var operation = SceneManager.UnloadSceneAsync(sceneName);
-            Instance._scenes.Pop();
             return operation;
         }
 

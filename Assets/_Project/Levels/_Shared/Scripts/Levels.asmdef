@@ -1,12 +1,10 @@
 {
-  "name": "Player",
+  "name": "Levels",
   "rootNamespace": "",
   "references": [
-    "Input",
-    "Data",
-    "Enemy",
-    "Collider",
-    "Levels"
+    "Navigation",
+    "Unity.TextMeshPro",
+    "Data"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

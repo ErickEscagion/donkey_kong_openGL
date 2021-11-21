@@ -1,10 +1,11 @@
 {
-    "name": "Level1",
+    "name": "Selection",
     "rootNamespace": "",
     "references": [
+        "Game",
+        "Levels",
         "Navigation",
-        "Data",
-        "Levels"
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

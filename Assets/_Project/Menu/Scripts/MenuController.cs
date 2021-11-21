@@ -1,6 +1,6 @@
-using _Project.Levels.Level1.Scripts;
-using _Project.LevelSelection.Scripts;
+using _Project.Game.Scripts;
 using _Project.Navigation.Scripts;
+using _Project.Selection.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,14 +27,16 @@ namespace _Project.Menu.Scripts
 
         #endregion
 
-        private static void OnPlayButtonClick() =>
-            NavigationController.Push(Level1Controller.sceneName, LoadSceneMode.Single);
+        private  void OnPlayButtonClick() =>
+            NavigationController.Push(gameData.Levels[gameData.MaxLevelAchieved - 1].name, LoadSceneMode.Single);
 
         private static void OnLevelSelectionButtonClick() =>
-            NavigationController.Push(LevelSelectionController.sceneName, LoadSceneMode.Single);
+            NavigationController.Push(SelectionController.sceneName, LoadSceneMode.Single);
 
 #pragma warning disable 649
-        [Header("Scene")] [SerializeField] private Button playButton;
+        [Header("Assets"), SerializeField] private GameData gameData;
+
+        [Header("Scene"),SerializeField] private Button playButton;
         [SerializeField] private Button levelSelectionButton;
 #pragma warning restore 649
     }

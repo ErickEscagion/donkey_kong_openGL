@@ -1,7 +1,7 @@
-using System.Collections.Generic;
+using _Project.Levels._Shared.Scripts;
 using UnityEngine;
 
-namespace _Project._Core.Scripts
+namespace _Project.Game.Scripts
 {
     [CreateAssetMenu(fileName = "New GameData", menuName = "Game/Data")]
     public class GameData : ScriptableObject
@@ -14,14 +14,14 @@ namespace _Project._Core.Scripts
             set => maxLevelAchieved = value;
         }
 
-        public IEnumerable<string> Levels => levels;
+        public Level[] Levels => levels;
 
         #endregion
 
 #pragma warning disable 649
-        [SerializeField] private short maxLevelAchieved;
+        [Min(1), SerializeField] private short maxLevelAchieved;
 
-        [Space] [SerializeField] private string[] levels;
+        [Space] [SerializeField] private Level[] levels;
 #pragma warning restore 649
     }
 }

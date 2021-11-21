@@ -3,8 +3,8 @@
     "rootNamespace": "",
     "references": [
         "Navigation",
-        "Core",
-        "Data"
+        "Data",
+        "Levels"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -9,7 +9,7 @@ namespace _Project.Navigation.Scripts
 
         protected void Awake() => _canvas = FindObjectsOfType<Canvas>();
 
-        private void Start()
+        protected virtual void Start()
         {
             foreach (var canvas in _canvas)
             {

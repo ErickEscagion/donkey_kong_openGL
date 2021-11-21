@@ -2,10 +2,10 @@
     "name": "Menu",
     "rootNamespace": "",
     "references": [
-        "Core",
+        "Game",
         "Navigation",
-        "LevelSelection",
-        "Level1"
+        "Selection",
+        "Levels"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

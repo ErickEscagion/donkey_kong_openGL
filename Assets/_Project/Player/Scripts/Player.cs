@@ -1,9 +1,9 @@
 using System.Linq;
-using _Project._Core.Scripts;
 using _Project.Collider.Scripts;
 using _Project.Data.Scripts;
 using _Project.Enemy.Scripts;
 using _Project.Input.Scripts;
+using _Project.Levels._Shared.Scripts;
 using UnityEngine;
 
 namespace _Project.Player.Scripts
