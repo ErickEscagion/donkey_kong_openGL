@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &383419553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9012252231256573109, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
-  m_PrefabInstance: {fileID: 9012252231430275092}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &393470915 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9012252231284319191, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
@@ -613,7 +602,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: a1889717f248fc5429f2bce04217e898, type: 2}
   button: {fileID: 720152674}
-  indexTextMesh: {fileID: 383419553}
   deathsTextMesh: {fileID: 393470915}
   timeTextMesh: {fileID: 1323118170}
 --- !u!4 &1571666036
