@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using _Project.Navigation.Scripts;
 using TMPro;
@@ -15,8 +14,7 @@ namespace _Project.Levels._Shared.Scripts
 
         private void Start()
         {
-            indexTextMesh.text = level.Index.ToString();
-            deathsTextMesh.text = string.Concat(Deaths, level.Deaths.ToString());
+            deathsTextMesh.text = FormatDeaths(level.Deaths);
 
             StartCoroutine(TimeCoroutine());
         }
@@ -29,6 +27,17 @@ namespace _Project.Levels._Shared.Scripts
 
         private static void OnMenuButtonClick() => NavigationController.Navigate("menu");
 
+        private static string FormatDeaths(int deaths) => string.Concat(Deaths, deaths);
+
+        private static string FormatTime(int time)
+        {
+            var hours = time / 3600;
+            var minutes = (time - hours * 3600) / 60;
+            var seconds = time - hours * 3600 - minutes * 60;
+
+            return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+        }
+
         #region Coroutines
 
         private IEnumerator TimeCoroutine()
@@ -37,7 +46,7 @@ namespace _Project.Levels._Shared.Scripts
             {
                 yield return _timeWaitForSeconds;
                 _time++;
-                timeTextMesh.text = _time.ToString();
+                timeTextMesh.text = FormatTime(_time);
             }
         }
 
@@ -53,7 +62,6 @@ namespace _Project.Levels._Shared.Scripts
         [Header("Assets"), SerializeField] private Level level;
 
         [Header("Scene"), SerializeField] private Button button;
-        [SerializeField] private TextMeshProUGUI indexTextMesh;
         [SerializeField] private TextMeshProUGUI deathsTextMesh;
         [SerializeField] private TextMeshProUGUI timeTextMesh;
 #pragma warning restore 649

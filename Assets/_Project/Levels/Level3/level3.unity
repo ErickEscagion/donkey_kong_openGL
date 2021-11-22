@@ -220,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: c715dac9b2c380a49ae4a40340783bfd, type: 2}
   button: {fileID: 1959742402}
-  indexTextMesh: {fileID: 1959742401}
   deathsTextMesh: {fileID: 1959742400}
   timeTextMesh: {fileID: 1959742399}
 --- !u!4 &234858639
@@ -266,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05fecccd5e948d28b57e65613a9b546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
+  level: {fileID: 11400000, guid: c715dac9b2c380a49ae4a40340783bfd, type: 2}
 --- !u!4 &762375058
 Transform:
   m_ObjectHideFlags: 0
@@ -364,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802210234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.43, z: -10}
+  m_LocalPosition: {x: 0.5, y: 0.43, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -739,6 +738,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9012252231256573109, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+      propertyPath: m_text
+      value: 3/3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012252231256573109, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+      propertyPath: m_margin.z
+      value: 0.000091552734
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
 --- !u!114 &1959742399 stripped
@@ -755,17 +762,6 @@ MonoBehaviour:
 --- !u!114 &1959742400 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9012252231284319191, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
-  m_PrefabInstance: {fileID: 1959742398}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1959742401 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9012252231256573109, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
   m_PrefabInstance: {fileID: 1959742398}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
