@@ -1,0 +1,18 @@
+{
+    "name": "GameOver",
+    "rootNamespace": "",
+    "references": [
+        "Navigation",
+        "Levels",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

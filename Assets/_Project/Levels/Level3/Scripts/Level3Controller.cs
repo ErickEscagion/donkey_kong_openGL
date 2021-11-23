@@ -24,7 +24,7 @@ namespace _Project.Levels.Level3.Scripts
                     NavigationController.Navigate(SceneName, LoadSceneMode.Single);
                     break;
                 case LevelState.Victory:
-                    NavigationController.Navigate("menu", LoadSceneMode.Single);
+                    NavigationController.Navigate("gameOver", LoadSceneMode.Single);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);

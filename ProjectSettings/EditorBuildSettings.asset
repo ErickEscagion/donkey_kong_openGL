@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Levels/Level3/level3.unity
     guid: 3026db727c8462444a16ee7f16473db8
+  - enabled: 1
+    path: Assets/_Project/GameOver/gameOver.unity
+    guid: 2d4cd654f0ec25d4a9cfe7d791d42807
   m_configObjects: {}
