@@ -6,7 +6,8 @@
     "Data",
     "Enemy",
     "Collider",
-    "Levels"
+    "Levels",
+    "FinishLine"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

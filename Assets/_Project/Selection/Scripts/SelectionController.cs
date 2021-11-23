@@ -1,4 +1,4 @@
-using _Project.Game.Scripts;
+using _Project.Levels._Shared.Scripts;
 using UnityEngine;
 using Screen = _Project.Navigation.Scripts.Screen;
 
@@ -13,7 +13,7 @@ namespace _Project.Selection.Scripts
         protected override void Start()
         {
             base.Start();
-            foreach (var level in gameData.Levels)
+            foreach (var level in levelsData.Levels)
             {
                 var instance = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity, parentTransform);
                 instance.Initialize(level);
@@ -23,7 +23,7 @@ namespace _Project.Selection.Scripts
         #endregion
 
 #pragma warning disable 649
-        [Header("Assets"), SerializeField] private GameData gameData;
+        [Header("Assets"), SerializeField] private LevelsData levelsData;
         [SerializeField] private Level levelPrefab;
 
         [Header("Scene"), SerializeField] private Transform parentTransform;

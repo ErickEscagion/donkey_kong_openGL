@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26101714dfc09d34ea3cea656bd565b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
   playButton: {fileID: 241371927}
   levelSelectionButton: {fileID: 111678677}
 --- !u!4 &344667896

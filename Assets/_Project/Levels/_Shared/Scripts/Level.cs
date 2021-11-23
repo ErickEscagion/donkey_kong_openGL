@@ -13,11 +13,7 @@ namespace _Project.Levels._Shared.Scripts
             set => index = value;
         }
 
-        public int Deaths
-        {
-            get => deaths;
-            set => deaths = value;
-        }
+
 
         public string Name => name;
 
@@ -27,7 +23,7 @@ namespace _Project.Levels._Shared.Scripts
 
 #pragma warning disable 649
         [SerializeField] private int index;
-        [SerializeField] private int deaths;
+
         [SerializeField] private new string name;
         [SerializeField] private string sceneName;
 #pragma warning restore 649

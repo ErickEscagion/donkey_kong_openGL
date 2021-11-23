@@ -41,6 +41,7 @@ namespace _Project.Player.Scripts
 
         private void Awake()
         {
+            _finishLine = GetComponent<FinishLine.Scripts.FinishLine>();
             _enemies = GetComponent<Enemies>();
             _colliders = GetComponent<RectCollider2s>();
         }
@@ -51,6 +52,14 @@ namespace _Project.Player.Scripts
 
         private void FixedUpdate()
         {
+            if (player.origin.x + player.size > _finishLine.Data.origin.x - _finishLine.Data.width / 2 &&
+                player.origin.x - player.size < _finishLine.Data.origin.x + _finishLine.Data.width / 2 &&
+                player.origin.y + player.size > _finishLine.Data.origin.y - _finishLine.Data.height / 2 &&
+                player.origin.y - player.size < _finishLine.Data.origin.y + _finishLine.Data.height / 2)
+            {
+                Win();
+            }
+
             foreach (var enemy in _enemies.Data)
             {
                 if (player.origin.x + player.size > enemy.origin.x - enemy.size &&
@@ -84,12 +93,19 @@ namespace _Project.Player.Scripts
             DataEvent<LevelState>.Send(LevelState.Defeat);
         }
 
+        private void Win()
+        {
+            enabled = false;
+            DataEvent<LevelState>.Send(LevelState.Victory);
+        }
+
         private void OnInput(InputData data) => Direction = data.Get<Vector2>();
 
         private Vector2 _direction;
 
         private Enemies _enemies;
         private RectCollider2s _colliders;
+        private FinishLine.Scripts.FinishLine _finishLine;
         private readonly bool[] _allowedDirections = Enumerable.Repeat(true, 4).ToArray();
 
 #pragma warning disable 649

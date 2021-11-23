@@ -23,6 +23,8 @@ namespace _Project.Collider.Scripts
             GL.PopMatrix();
         }
 
+        #endregion
+
         private static void Draw(RectCollider2 collider)
         {
             GL.Begin(GL.QUADS);
@@ -41,8 +43,6 @@ namespace _Project.Collider.Scripts
             GL.Vertex3(collider.origin.x + collider.width / 2, collider.origin.y + collider.height / 2, 0);
             GL.Vertex3(collider.origin.x + collider.width / 2, collider.origin.y - collider.height / 2, 0);
         }
-
-        #endregion
 
         private RectCollider2s _colliders;
 

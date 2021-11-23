@@ -293,6 +293,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &746565230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1912321469, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+  m_PrefabInstance: {fileID: 746565227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &746565231 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9012252232132012150, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
@@ -321,6 +332,7 @@ GameObject:
   - component: {fileID: 802210238}
   - component: {fileID: 802210242}
   - component: {fileID: 802210243}
+  - component: {fileID: 802210244}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -555,6 +567,23 @@ MonoBehaviour:
     width: 8.21
     color: {r: 0.28960705, g: 1, b: 0, a: 0.54509807}
     origin: {x: 9.71, y: -4.98}
+--- !u!114 &802210244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e807213791db440a33e3209c051850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishLineData:
+    height: 2.24
+    width: 3.81
+    color: {r: 1, g: 0, b: 0, a: 1}
+    origin: {x: 10.54, y: 2.35}
 --- !u!1 &805243931
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: db96bee8aaf5bee4c8b196a941d627da, type: 2}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
 --- !u!4 &1520746819
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: db96bee8aaf5bee4c8b196a941d627da, type: 2}
-  button: {fileID: 746565231}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  menuButton: {fileID: 746565231}
+  pauseButton: {fileID: 746565230}
   deathsTextMesh: {fileID: 746565229}
   timeTextMesh: {fileID: 746565228}

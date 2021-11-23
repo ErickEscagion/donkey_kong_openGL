@@ -14,18 +14,30 @@ namespace _Project.Levels._Shared.Scripts
 
         private void Start()
         {
-            deathsTextMesh.text = FormatDeaths(level.Deaths);
+            deathsTextMesh.text = FormatDeaths(levelsData.Deaths);
+            timeTextMesh.text = FormatTime(levelsData.Time);
 
             StartCoroutine(TimeCoroutine());
         }
 
-        private void OnEnable() => button.onClick.AddListener(OnMenuButtonClick);
+        private void OnEnable()
+        {
+            menuButton.onClick.AddListener(OnMenuButtonClick);
+            pauseButton.onClick.AddListener(OnPauseButtonClick);
+        }
 
-        private void OnDisable() => button.onClick.RemoveListener(OnMenuButtonClick);
+        private void OnDisable()
+        {
+            menuButton.onClick.RemoveListener(OnMenuButtonClick);
+            pauseButton.onClick.RemoveListener(OnPauseButtonClick);
+        }
 
         #endregion
 
         private static void OnMenuButtonClick() => NavigationController.Navigate("menu");
+
+        private static void OnPauseButtonClick() =>
+            Time.timeScale = Time.timeScale == 0f ? Time.timeScale = 1f : Time.timeScale = 0f;
 
         private static string FormatDeaths(int deaths) => string.Concat(Deaths, deaths);
 
@@ -45,8 +57,8 @@ namespace _Project.Levels._Shared.Scripts
             while (true)
             {
                 yield return _timeWaitForSeconds;
-                _time++;
-                timeTextMesh.text = FormatTime(_time);
+                levelsData.Time++;
+                timeTextMesh.text = FormatTime(levelsData.Time);
             }
         }
 
@@ -54,14 +66,14 @@ namespace _Project.Levels._Shared.Scripts
 
         private const string Deaths = "DEATHS: ";
 
-        private int _time;
-
         private WaitForSeconds _timeWaitForSeconds;
 
 #pragma warning disable 649
         [Header("Assets"), SerializeField] private Level level;
+        [SerializeField] private LevelsData levelsData;
 
-        [Header("Scene"), SerializeField] private Button button;
+        [Header("Scene"), SerializeField] private Button menuButton;
+        [SerializeField] private Button pauseButton;
         [SerializeField] private TextMeshProUGUI deathsTextMesh;
         [SerializeField] private TextMeshProUGUI timeTextMesh;
 #pragma warning restore 649

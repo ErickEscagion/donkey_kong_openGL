@@ -23,12 +23,12 @@ namespace _Project.Levels._Shared.Scripts
 
         #endregion
 
-        private void OnLevelStateChange(LevelState state)
+        protected virtual void OnLevelStateChange(LevelState state)
         {
             switch (state)
             {
                 case LevelState.Defeat:
-                    level.Deaths++;
+                    levelsData.Deaths++;
                     NavigationController.Navigate(SceneName, LoadSceneMode.Single);
                     break;
                 case LevelState.Victory:
@@ -39,7 +39,8 @@ namespace _Project.Levels._Shared.Scripts
         }
 
 #pragma warning disable 649
-        [SerializeField] private Level level;
+        [SerializeField] protected Level level;
+        [SerializeField] protected LevelsData levelsData;
 #pragma warning restore 649
     }
 }
