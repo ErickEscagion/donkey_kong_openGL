@@ -1,4 +1,4 @@
-using _Project.Game.Scripts;
+using _Project.Levels._Shared.Scripts;
 using _Project.Navigation.Scripts;
 using _Project.Selection.Scripts;
 using UnityEngine;
@@ -12,6 +12,13 @@ namespace _Project.Menu.Scripts
         public const string sceneName = "menu";
 
         #region Lifecycle
+
+        protected override void Start()
+        {
+            base.Start();
+            levelsData.Time = 0;
+            levelsData.Deaths = 0;
+        }
 
         private void OnEnable()
         {
@@ -28,13 +35,13 @@ namespace _Project.Menu.Scripts
         #endregion
 
         private  void OnPlayButtonClick() =>
-            NavigationController.Push(gameData.Levels[gameData.MaxLevelAchieved - 1].name, LoadSceneMode.Single);
+            NavigationController.Push(levelsData.Levels[levelsData.MaxLevelAchieved - 1].name, LoadSceneMode.Single);
 
         private static void OnLevelSelectionButtonClick() =>
             NavigationController.Push(SelectionController.sceneName, LoadSceneMode.Single);
 
 #pragma warning disable 649
-        [Header("Assets"), SerializeField] private GameData gameData;
+        [Header("Assets"), SerializeField] private LevelsData levelsData;
 
         [Header("Scene"),SerializeField] private Button playButton;
         [SerializeField] private Button levelSelectionButton;

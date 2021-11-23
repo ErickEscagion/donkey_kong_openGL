@@ -219,7 +219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: c715dac9b2c380a49ae4a40340783bfd, type: 2}
-  button: {fileID: 1959742402}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  menuButton: {fileID: 1959742402}
+  pauseButton: {fileID: 1959742401}
   deathsTextMesh: {fileID: 1959742400}
   timeTextMesh: {fileID: 1959742399}
 --- !u!4 &234858639
@@ -266,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: c715dac9b2c380a49ae4a40340783bfd, type: 2}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
 --- !u!4 &762375058
 Transform:
   m_ObjectHideFlags: 0
@@ -297,6 +300,8 @@ GameObject:
   - component: {fileID: 802210242}
   - component: {fileID: 802210241}
   - component: {fileID: 802210243}
+  - component: {fileID: 802210245}
+  - component: {fileID: 802210244}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -596,6 +601,37 @@ MonoBehaviour:
     width: 5.13
     color: {r: 0.050008625, g: 0.4245283, b: 0, a: 1}
     origin: {x: 6.2, y: 9.45}
+--- !u!114 &802210244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2872eee381557a64fafc9267eed4751c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishLine: {fileID: 802210245}
+  material: {fileID: 2100000, guid: 1890ceb5d04d21e479ffe6fcbfca813a, type: 2}
+--- !u!114 &802210245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e807213791db440a33e3209c051850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishLineData:
+    height: 1.86
+    width: 3.81
+    color: {r: 1, g: 0, b: 0, a: 1}
+    origin: {x: 6.05, y: 7.04}
 --- !u!1 &1187648229
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +804,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1959742401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1912321469, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+  m_PrefabInstance: {fileID: 1959742398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1959742402 stripped

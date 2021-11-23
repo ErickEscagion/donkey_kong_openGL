@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57aef1f908d0bb49a386dd3910c491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
   levelPrefab: {fileID: 7651280504939381271, guid: 48ebdb9b34212de429596ab958b84460, type: 3}
   parentTransform: {fileID: 1194268213}
 --- !u!1 &1132352318
