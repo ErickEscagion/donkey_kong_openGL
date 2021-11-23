@@ -333,6 +333,8 @@ GameObject:
   - component: {fileID: 802210242}
   - component: {fileID: 802210243}
   - component: {fileID: 802210244}
+  - component: {fileID: 802210246}
+  - component: {fileID: 802210245}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -358,7 +360,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.7058824, g: 0.70980394, b: 0.9960785, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -482,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borderWidth: 0.1
   material: {fileID: 2100000, guid: 947f4b786b78a5d4ea1e592ca11c0b9e, type: 2}
+  enemies: {fileID: 802210238}
 --- !u!114 &802210241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +587,34 @@ MonoBehaviour:
     width: 3.81
     color: {r: 1, g: 0, b: 0, a: 1}
     origin: {x: 10.54, y: 2.35}
+--- !u!114 &802210245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a341b49c8f6346478dc508352c661ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderWidth: 0.1
+  material: {fileID: 2100000, guid: 7dd676a36b9b55543b2a3e7278b921df, type: 2}
+  coins: {fileID: 802210246}
+--- !u!114 &802210246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802210234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6868ff88ad6874394cfb4c16f86bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: []
 --- !u!1 &805243931
 GameObject:
   m_ObjectHideFlags: 0

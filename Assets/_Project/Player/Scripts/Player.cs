@@ -1,4 +1,5 @@
 using System.Linq;
+using _Project.Coins.Scripts;
 using _Project.Collider.Scripts;
 using _Project.Data.Scripts;
 using _Project.Enemy.Scripts;
@@ -44,6 +45,7 @@ namespace _Project.Player.Scripts
             _finishLine = GetComponent<FinishLine.Scripts.FinishLine>();
             _enemies = GetComponent<Enemies>();
             _colliders = GetComponent<RectCollider2s>();
+            _coins = GetComponent<Coins.Scripts.Coins>();
         }
 
         private void OnEnable() => DataEvent<InputData>.call += OnInput;
@@ -57,7 +59,26 @@ namespace _Project.Player.Scripts
                 player.origin.y + player.size > _finishLine.Data.origin.y - _finishLine.Data.height / 2 &&
                 player.origin.y - player.size < _finishLine.Data.origin.y + _finishLine.Data.height / 2)
             {
-                Win();
+                if (_coins.Data.All(coin => !coin.active))
+                {
+                    Win();
+                }
+            }
+
+            foreach (var coin in _coins.Data)
+            {
+                if (!coin.active)
+                {
+                    continue;
+                }
+
+                if (player.origin.x + player.size > coin.origin.x - coin.size &&
+                    player.origin.x - player.size < coin.origin.x + coin.size &&
+                    player.origin.y + player.size > coin.origin.y - coin.size &&
+                    player.origin.y - player.size < coin.origin.y + coin.size)
+                {
+                    GetCoin(coin);
+                }
             }
 
             foreach (var enemy in _enemies.Data)
@@ -87,6 +108,11 @@ namespace _Project.Player.Scripts
 
         #endregion
 
+        private void GetCoin(Coin coin)
+        {
+            coin.active = false;
+        }
+
         private void Kill()
         {
             enabled = false;
@@ -104,6 +130,7 @@ namespace _Project.Player.Scripts
         private Vector2 _direction;
 
         private Enemies _enemies;
+        private Coins.Scripts.Coins _coins;
         private RectCollider2s _colliders;
         private FinishLine.Scripts.FinishLine _finishLine;
         private readonly bool[] _allowedDirections = Enumerable.Repeat(true, 4).ToArray();

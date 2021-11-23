@@ -8,8 +8,6 @@ namespace _Project.Enemy.Scripts
     {
         #region Lifecycle
 
-        private void Awake() => _enemies = GetComponent<Enemies>();
-
         private void OnPostRender()
         {
             GL.PushMatrix();
@@ -17,7 +15,7 @@ namespace _Project.Enemy.Scripts
 
             GL.Begin(GL.QUADS);
 
-            foreach (var enemy in _enemies.Data)
+            foreach (var enemy in enemies.Data)
             {
                 Draw(enemy);
             }
@@ -45,12 +43,13 @@ namespace _Project.Enemy.Scripts
             GL.Vertex3(enemy.origin.x + enemy.size, enemy.origin.y - enemy.size, 0);
         }
 
-        private Enemies _enemies;
 
 #pragma warning disable 649
         [SerializeField] private float borderWidth = .1f;
 
-        [Space, SerializeField] private Material material;
+        [Header("Assets"), SerializeField] private Material material;
+
+        [Header("Scene"), SerializeField] private Enemies enemies;
 #pragma warning restore 649
     }
 }

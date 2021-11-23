@@ -41,8 +41,8 @@ namespace _Project.Player.Scripts
 #pragma warning disable 649
         [SerializeField] private float borderWidth = .1f;
 
-        [Space, SerializeField] private Player player;
-        [SerializeField] private Material material;
+        [Header("Scene"), SerializeField] private Player player;
+        [Header("Assets"), SerializeField] private Material material;
 #pragma warning restore 649
     }
 }
