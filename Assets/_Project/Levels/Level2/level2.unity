@@ -654,8 +654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814e294a11877cc4db62be459076bf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0.25
   level: {fileID: 11400000, guid: a1889717f248fc5429f2bce04217e898, type: 2}
   levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  canvasGroup: {fileID: 9012252231430275093}
   menuButton: {fileID: 720152674}
   pauseButton: {fileID: 1912321469}
   deathsTextMesh: {fileID: 393470915}
@@ -848,3 +850,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+--- !u!225 &9012252231430275093 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5697668471198506873, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+  m_PrefabInstance: {fileID: 9012252231430275092}
+  m_PrefabAsset: {fileID: 0}

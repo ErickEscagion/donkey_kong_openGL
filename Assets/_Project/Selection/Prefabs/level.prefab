@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2367263e83acd604b97fdf31b1bded52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0.25
   selectedColor: {r: 1, g: 0.9176471, b: 0.19215688, a: 1}
   deselectedColor: {r: 1, g: 1, b: 1, a: 1}
   borderImage: {fileID: 4260699220863643113}

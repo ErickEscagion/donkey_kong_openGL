@@ -1,18 +1,19 @@
 {
-  "name": "Levels",
-  "rootNamespace": "",
-  "references": [
-    "Navigation",
-    "Unity.TextMeshPro",
-    "Data"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "autoReferenced": true,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "Levels",
+    "rootNamespace": "",
+    "references": [
+        "Navigation",
+        "Unity.TextMeshPro",
+        "Data",
+        "DOTween.Modules"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

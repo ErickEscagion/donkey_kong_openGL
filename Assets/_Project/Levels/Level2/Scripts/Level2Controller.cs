@@ -15,6 +15,8 @@ namespace _Project.Levels.Level2.Scripts
 
         #endregion
 
+        protected override void Initialize(LevelData value) => _data = value;
+
         protected override void OnLevelStateChange(LevelState state)
         {
             switch (state)
@@ -24,11 +26,15 @@ namespace _Project.Levels.Level2.Scripts
                     NavigationController.Navigate(SceneName, LoadSceneMode.Single);
                     break;
                 case LevelState.Victory:
-                    NavigationController.Navigate(levelsData.Levels[level.Index].SceneName, LoadSceneMode.Single);
+                    NavigationController.Navigate(
+                        _data.Equals(LevelData.Normal) ? levelsData.Levels[level.Index].SceneName : "selection",
+                        LoadSceneMode.Single);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
             }
         }
+
+        private LevelData _data;
     }
 }

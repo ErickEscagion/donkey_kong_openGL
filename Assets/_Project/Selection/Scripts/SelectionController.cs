@@ -29,7 +29,7 @@ namespace _Project.Selection.Scripts
 
         #endregion
 
-        private void OnReturnButtonClick() => NavigationController.Navigate("menu");
+        private static void OnReturnButtonClick() => NavigationController.Navigate("menu");
 
 #pragma warning disable 649
         [Header("Assets"), SerializeField] private LevelsData levelsData;

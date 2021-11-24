@@ -3,11 +3,10 @@ using _Project.Data.Scripts;
 using _Project.Navigation.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Screen = _Project.Navigation.Scripts.Screen;
 
 namespace _Project.Levels._Shared.Scripts
 {
-    public abstract class LevelController : Screen
+    public abstract class LevelController : Screen<LevelData>
     {
         #region Properties
 

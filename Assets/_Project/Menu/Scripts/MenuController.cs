@@ -34,8 +34,9 @@ namespace _Project.Menu.Scripts
 
         #endregion
 
-        private  void OnPlayButtonClick() =>
-            NavigationController.Push(levelsData.Levels[levelsData.MaxLevelAchieved - 1].name, LoadSceneMode.Single);
+        private void OnPlayButtonClick() =>
+            NavigationController.Push(levelsData.Levels[levelsData.MaxLevelAchieved - 1].name, LoadSceneMode.Single,
+                LevelData.Normal);
 
         private static void OnLevelSelectionButtonClick() =>
             NavigationController.Push(SelectionController.sceneName, LoadSceneMode.Single);
@@ -43,7 +44,7 @@ namespace _Project.Menu.Scripts
 #pragma warning disable 649
         [Header("Assets"), SerializeField] private LevelsData levelsData;
 
-        [Header("Scene"),SerializeField] private Button playButton;
+        [Header("Scene"), SerializeField] private Button playButton;
         [SerializeField] private Button levelSelectionButton;
 #pragma warning restore 649
     }

@@ -177,6 +177,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5697668471198506873, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9012252231217404619, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
       propertyPath: m_Name
       value: canvas
@@ -264,10 +268,6 @@ PrefabInstance:
     - target: {fileID: 9012252231217404663, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9012252231256573109, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
-      propertyPath: m_text
-      value: 1/3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
@@ -769,9 +769,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814e294a11877cc4db62be459076bf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0.25
   level: {fileID: 11400000, guid: db96bee8aaf5bee4c8b196a941d627da, type: 2}
   levelsData: {fileID: 11400000, guid: 158ad31df33576744b198909053e56be, type: 2}
+  canvasGroup: {fileID: 1937342152}
   menuButton: {fileID: 746565231}
   pauseButton: {fileID: 746565230}
   deathsTextMesh: {fileID: 746565229}
   timeTextMesh: {fileID: 746565228}
+--- !u!225 &1937342152 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5697668471198506873, guid: be1d4a678e12cfd4cb34e2eef2b7e4c3, type: 3}
+  m_PrefabInstance: {fileID: 746565227}
+  m_PrefabAsset: {fileID: 0}

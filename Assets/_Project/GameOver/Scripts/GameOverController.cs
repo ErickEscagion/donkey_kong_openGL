@@ -42,7 +42,8 @@ namespace _Project.GameOver.Scripts
             return $"you finish with {deaths} deaths in {hours:D2}:{minutes:D2}:{seconds:D2}";
         }
 
-        private void OnRestartButtonClick() => NavigationController.Navigate(levelsData.Levels[0].SceneName);
+        private void OnRestartButtonClick() =>
+            NavigationController.Navigate(levelsData.Levels[0].SceneName, LevelData.Normal);
 
         private static void OnReturnButtonClick() => NavigationController.Navigate("menu");
 

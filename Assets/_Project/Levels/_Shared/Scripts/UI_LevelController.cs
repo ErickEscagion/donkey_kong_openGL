@@ -1,5 +1,6 @@
 using System.Collections;
 using _Project.Navigation.Scripts;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,8 +37,26 @@ namespace _Project.Levels._Shared.Scripts
 
         private static void OnMenuButtonClick() => NavigationController.Navigate("menu");
 
-        private static void OnPauseButtonClick() =>
-            Time.timeScale = Time.timeScale == 0f ? Time.timeScale = 1f : Time.timeScale = 0f;
+        private void OnPauseButtonClick()
+        {
+            if (_sequence != null && !_sequence.IsComplete())
+            {
+                _sequence.Kill();
+            }
+
+            paused = !paused;
+
+            canvasGroup.interactable = canvasGroup.blocksRaycasts = !paused;
+
+            _sequence = DOTween.Sequence();
+            _sequence
+                .Join(DOTween.To(
+                    () => Time.timeScale,
+                    value => Time.timeScale = value,
+                    paused ? 0f : 1f,
+                    time))
+                .Join(canvasGroup.DOFade(paused ? 1f : 0f, time));
+        }
 
         private static string FormatDeaths(int deaths) => string.Concat(Deaths, deaths);
 
@@ -66,13 +85,19 @@ namespace _Project.Levels._Shared.Scripts
 
         private const string Deaths = "DEATHS: ";
 
+        private bool paused = false;
+
+        private Sequence _sequence;
         private WaitForSeconds _timeWaitForSeconds;
 
 #pragma warning disable 649
+        [SerializeField] private float time = .5f;
+
         [Header("Assets"), SerializeField] private Level level;
         [SerializeField] private LevelsData levelsData;
 
-        [Header("Scene"), SerializeField] private Button menuButton;
+        [Header("Scene"), SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private Button menuButton;
         [SerializeField] private Button pauseButton;
         [SerializeField] private TextMeshProUGUI deathsTextMesh;
         [SerializeField] private TextMeshProUGUI timeTextMesh;
