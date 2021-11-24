@@ -517,7 +517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6868ff88ad6874394cfb4c16f86bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: []
+  coins:
+  - active: 1
+    size: 0.23
+    color: {r: 0.9294118, g: 0.9294118, b: 0, a: 1}
+    origin: {x: -0.17, y: -0.11}
 --- !u!1 &1052643295
 GameObject:
   m_ObjectHideFlags: 0
