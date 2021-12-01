@@ -1,0 +1,22 @@
+{
+  "name": "Player",
+  "rootNamespace": "",
+  "references": [
+    "Input",
+    "Data",
+    "Enemy",
+    "Collider",
+    "Levels",
+    "FinishLine",
+    "Coins"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

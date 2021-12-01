@@ -1,0 +1,18 @@
+{
+    "name": "Level3",
+    "rootNamespace": "",
+    "references": [
+        "Navigation",
+        "Data",
+        "Levels"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
